@@ -143,6 +143,18 @@ Ensure your backend server is running before you try to log in or file a complai
 - Citizen profiles and reward points
 
 ## How to Run
+First run and connect backend
+Backend:
+```bash
+cd backend
+```
+
+after that run 
+```bash
+python main.py
+```
+this will connet the backend
+(mongodb)
 
 To start the development server, run the following command in your terminal:
 
