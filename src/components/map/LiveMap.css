@@ -1,0 +1,93 @@
+/* Dark theme filter for OpenStreetMap tiles to make them look like Mapbox Dark */
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1E1E35;
+  background-color: #0F0F1A;
+}
+
+/* Custom Marker Styling */
+.vanta-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vanta-marker-inner {
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 10px currentColor;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+}
+
+/* Pulsing Animations for Critical Pins */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.pulse-critical::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  background-color: inherit;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.pulse-catastrophic::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  animation: pulse-ring 1s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  background-color: inherit;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.vanta-popup .leaflet-popup-content-wrapper {
+  background-color: #111118;
+  color: white;
+  border: 1px solid #1E1E35;
+  border-radius: 8px;
+}
+.vanta-popup .leaflet-popup-tip {
+  background-color: #111118;
+  border: 1px solid #1E1E35;
+}
+.vanta-popup .leaflet-popup-content {
+  margin: 12px;
+}
+
+.popup-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+.popup-meta {
+  font-family: 'monospace';
+  font-size: 11px;
+  color: #8888AA;
+}
