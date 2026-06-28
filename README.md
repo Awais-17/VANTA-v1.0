@@ -116,7 +116,7 @@ Before you begin, ensure you have the following installed on your system:
 1.  **Clone the repository** (if you haven't already):
     ```bash
     git clone <your-repository-url>
-    cd H2K
+    cd H2K #(the folder you have full codebase)
     ```
 
 2.  **Install dependencies**:
@@ -157,9 +157,9 @@ this will connet the backend
 (mongodb)
 
 To start the development server, run the following command in your terminal:
-
+#(In the folder you have full codebase)
 ```bash
-npm run dev
+npm run dev #(In the folder you have full codebase)
 # or
 yarn dev
 ```
